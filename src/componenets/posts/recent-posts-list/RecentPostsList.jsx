@@ -13,11 +13,11 @@ const RecentPostsList = () => {
 
 		try {
 			const res = await axios.get(`${domain}/posts`);
-			const mostViewedPosts = res.data;
-			setPosts(mostViewedPosts);
+			const recentPosts = res.data;
+			setPosts(recentPosts);
 			setIsLoading(false);
 		} catch (error) {
-			console.error("error in getMostViewPosts \n" + error);
+			console.error("error in getLatestPosts \n" + error);
 		}
 	};
 
