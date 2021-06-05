@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "https://dev-talks-api.herokuapp.com"
+  status = 200
+  force = true
