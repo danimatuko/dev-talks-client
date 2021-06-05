@@ -1,6 +1,7 @@
 import axios from "axios";
 import setAuthToken from "../../helpers/setAuthToken";
 import authTypes from "./authTypes";
+const domain = process.env.REACT_APP_DOMAIN;
 
 export const signUp = (data) => {
 	/* To dispatch an aysnc action we use `redux-thunk` middleware, 
@@ -8,8 +9,8 @@ export const signUp = (data) => {
 	The function gets the `dispatch` as an argument. */
 	return async (dispatch) => {
 		try {
-			const res = await axios.post("auth/register", data);
-		//	if (res.data.token) throw new Error("User alerady exist");
+			const res = await axios.post(`${domain}/auth/register`, data);
+			//	if (res.data.token) throw new Error("User alerady exist");
 
 			localStorage.setItem("token", res.data.token);
 
@@ -36,7 +37,7 @@ export const login = (data) => {
 	return async (dispatch) => {
 		try {
 			dispatch(setLoadingUser);
-			const res = await axios.post("auth/login", data);
+			const res = await axios.post(`${domain}/auth/login`, data);
 			localStorage.setItem("token", res.data.token);
 			dispatch({
 				type: authTypes.LOGIN_SUCCESS,
@@ -61,7 +62,7 @@ export const getLoggedInUser = () => {
 		const token = localStorage.token;
 		if (localStorage.token) setAuthToken(token);
 		try {
-			const res = await axios.get("/auth");
+			const res = await axios.get(`${domain}/auth`);
 			if (!res) throw Error;
 			dispatch({
 				type: authTypes.AUTH_SUCCESS,

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import RecentPosts from "../recent-post/RecentPost";
 import axios from "axios";
 
+const domain = process.env.REACT_APP_DOMAIN;
+
 const RecentPostsList = () => {
 	const [posts, setPosts] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +12,7 @@ const RecentPostsList = () => {
 		setIsLoading(true);
 
 		try {
-			const res = await axios.get("/posts");
+			const res = await axios.get(`${domain}/posts`);
 			const mostViewedPosts = res.data;
 			setPosts(mostViewedPosts);
 			setIsLoading(false);

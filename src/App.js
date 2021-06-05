@@ -16,6 +16,8 @@ import ProtectedRoute from "./componenets/layout/protected-route/ProtectedRoute"
 import ForbiddenPage from "./componenets/pages/error-page/ForbiddenPage";
 import PageNotFound from "./componenets/pages/error-page/PageNotFound";
 
+
+
 const App = () => {
 	const dispatch = useDispatch();
 	const isAuth = useSelector((state) => state.auth.isAuth);

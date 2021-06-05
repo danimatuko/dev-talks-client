@@ -1,5 +1,6 @@
 import axios from "axios";
 import profileTypes from "./profileTypes";
+const domain = process.env.REACT_APP_DOMAIN;
 
 export const getUsersPosts = (post) => {
 	/* To dispatch an aysnc action we use `redux-thunk` middleware, 
@@ -7,7 +8,7 @@ export const getUsersPosts = (post) => {
 	The function gets the `dispatch` as an argument. */
 	return async (dispatch) => {
 		try {
-			const res = await axios.get("/profile/dashboard");
+			const res = await axios.get(`${domain}/profile/dashboard`);
 			dispatch({
 				type: profileTypes.GET_USERS_POSTS_SUCCESS,
 				payload: res.data
