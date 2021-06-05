@@ -1,5 +1,4 @@
 [[redirects]]
   from = "/*"
-  to = "https://dev-talks-api.herokuapp.com"
+  to = "/index.html"
   status = 200
-  force = true
