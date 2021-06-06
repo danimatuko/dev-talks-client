@@ -1,7 +1,9 @@
 import axios from "axios";
+import checkEnvironment from "../../helpers/checkEnvironment";
 import setAuthToken from "../../helpers/setAuthToken";
 import authTypes from "./authTypes";
-const domain = process.env.REACT_APP_DOMAIN;
+
+const domain = checkEnvironment();
 
 export const signUp = (data) => {
 	/* To dispatch an aysnc action we use `redux-thunk` middleware, 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import RecentPosts from "../recent-post/RecentPost";
 import axios from "axios";
+import checkEnvironment from "../../../helpers/checkEnvironment";
 
-const domain = process.env.REACT_APP_DOMAIN;
-
+const domain = checkEnvironment();
 const RecentPostsList = () => {
 	const [posts, setPosts] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);

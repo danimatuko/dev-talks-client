@@ -1,7 +1,8 @@
 import axios from "axios";
+import checkEnvironment from "../../helpers/checkEnvironment";
 import postTypes from "./postTypes";
 
-const domain = process.env.REACT_APP_DOMAIN;
+const domain = checkEnvironment();
 
 export const addPost = (post) => {
 	/* To dispatch an aysnc action we use `redux-thunk` middleware, 

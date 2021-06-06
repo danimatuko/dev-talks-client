@@ -1,6 +1,9 @@
 import axios from "axios";
+import checkEnvironment from "../../helpers/checkEnvironment";
 import profileTypes from "./profileTypes";
-const domain = process.env.REACT_APP_DOMAIN;
+
+const domain = checkEnvironment();
+
 
 export const getUsersPosts = (post) => {
 	/* To dispatch an aysnc action we use `redux-thunk` middleware, 
