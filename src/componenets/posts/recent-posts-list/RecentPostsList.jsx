@@ -26,7 +26,13 @@ const RecentPostsList = () => {
 	}, []);
 
 	return isLoading === true ? (
-		<div>isLoading...</div>
+		<div>
+			<div className="d-flex justify-content-center">
+				<div className="spinner-border" role="status">
+					<span className="visually-hidden">Loading...</span>
+				</div>
+			</div>
+		</div>
 	) : (
 		<div className="row row-cols-lg-3 row-cols-md-2 align-items-end">
 			{posts != null &&
