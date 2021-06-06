@@ -63,54 +63,58 @@ const CreatePostForm = ({ history }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onFormSubmit)}>
-			<div className="mb-3">
-				<label htmlFor="title" className="form-label">
-					Title
-				</label>
-				<input
-					type="text"
-					className="form-control"
-					id="title"
-					name="title"
-					{...register("title")}
-				/>
-				<p className="text-danger ">{errors.title?.message}</p>
-			</div>
+		<div className="row">
+			<div className="col-md-6 mx-auto">
+				<form onSubmit={handleSubmit(onFormSubmit)}>
+					<div className="mb-3">
+						<label htmlFor="title" className="form-label">
+							Title
+						</label>
+						<input
+							type="text"
+							className="form-control"
+							id="title"
+							name="title"
+							{...register("title")}
+						/>
+						<p className="text-danger ">{errors.title?.message}</p>
+					</div>
 
-			<div className="mb-3">
-				<label htmlFor="body" className="form-label">
-					Write your post here
-				</label>
-				<textarea
-					type="text"
-					className="form-control"
-					id="body"
-					name="body"
-					rows="10"
-					{...register("body")}
-				/>
-				<p className="text-danger">{errors.body?.message}</p>
-			</div>
+					<div className="mb-3">
+						<label htmlFor="body" className="form-label">
+							Write your post here
+						</label>
+						<textarea
+							type="text"
+							className="form-control"
+							id="body"
+							name="body"
+							rows="10"
+							{...register("body")}
+						/>
+						<p className="text-danger">{errors.body?.message}</p>
+					</div>
 
-			<div className="mb-3">
-				<label htmlFor="imageUrl" className="form-label">
-					Add Image (optional)
-				</label>
-				<input
-					type="text"
-					className="form-control"
-					id="imageUrl"
-					name="imageUrl"
-					{...register("imageUrl")}
-				/>
-				<p className="text-danger">{errors.imageUrl?.message}</p>
-			</div>
+					<div className="mb-3">
+						<label htmlFor="imageUrl" className="form-label">
+							Add Image (optional)
+						</label>
+						<input
+							type="text"
+							className="form-control"
+							id="imageUrl"
+							name="imageUrl"
+							{...register("imageUrl")}
+						/>
+						<p className="text-danger">{errors.imageUrl?.message}</p>
+					</div>
 
-			<button type="submit" className="btn btn-dark">
-				{editMode ? "Edit Post" : "Add Post"}
-			</button>
-		</form>
+					<button type="submit" className="btn btn-dark">
+						{editMode ? "Edit Post" : "Add Post"}
+					</button>
+				</form>
+			</div>
+		</div>
 	);
 };
 

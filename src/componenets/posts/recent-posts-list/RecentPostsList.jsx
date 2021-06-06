@@ -4,7 +4,6 @@ import axios from "axios";
 import checkEnvironment from "../../../helpers/checkEnvironment";
 
 const domain = checkEnvironment();
-console.log(domain);
 const RecentPostsList = () => {
 	const [posts, setPosts] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);

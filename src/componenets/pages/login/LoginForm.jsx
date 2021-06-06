@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch, useSelector } from "react-redux";
 import { login, setLoadingUser } from "../../../redux/auth/authActions";
 import { useHistory } from "react-router";
+import "./login.css";
 
 const LoginForm = () => {
 	const isAuth = useSelector((state) => state.auth.isAuth);
@@ -45,9 +46,8 @@ const LoginForm = () => {
 			className="container d-flex flex-column justify-content-center"
 			style={{ height: "70vh" }}>
 			<div className="row">
-				<div className="col"></div>
-				<div className="col-lg-4 col-md-6">
-					<div className="border border-dark rounded-1 p-lg-5 p-sm-3 bg-light">
+				<div className="col-lg-4 col-md-6 mx-auto">
+					<div className="border border-dark rounded-1 px-5 py-5 bg-light">
 						<h1 className="text-center">Login</h1>
 						<form onSubmit={handleSubmit(onFormSubmit)}>
 							<div className="mb-3 px-2">
@@ -85,7 +85,6 @@ const LoginForm = () => {
 						</form>
 					</div>
 				</div>
-				<div className="col"></div>
 			</div>
 		</div>
 	);

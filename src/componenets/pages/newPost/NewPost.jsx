@@ -11,7 +11,7 @@ const NewPost = ({ history }) => {
 
 	const editMode = useSelector((state) => state.post.editMode);
 	return (
-		<div className="container" style={{ width: "50%" }}>
+		<div className="container">
 			<h1 className="text-center">{editMode ? "Edit Your Post" : "Add New Post"}</h1>
 			<CreatePostForm history={history} />
 		</div>

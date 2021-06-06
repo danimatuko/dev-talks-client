@@ -41,7 +41,7 @@ const RegisterForm = ({ history }) => {
 			<div className="row">
 				<div className="col"></div>
 				<div className="col-lg-4 col-md-6">
-					<div className="border border-dark rounded-1 p-lg-5 p-sm-3 bg-light">
+					<div className="border border-dark rounded-1 p-5 bg-light">
 						<h1 className="text-center">Sign up</h1>
 						<form onSubmit={handleSubmit(onFormSubmit)}>
 							<div className="mb-3  px-2">

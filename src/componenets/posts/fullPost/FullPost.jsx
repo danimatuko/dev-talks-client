@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getLoggedInUser } from "../../../redux/auth/authActions";
 import { getPostById } from "../../../redux/post/postActions";
+import "./full-post.css";
 
 const FullPost = ({ match }) => {
 	const { post_id } = match.params;
@@ -12,11 +13,11 @@ const FullPost = ({ match }) => {
 	useEffect(() => {
 		dispatch(getLoggedInUser);
 		dispatch(getPostById(post_id));
-	}, [post_id,dispatch]);
+	}, [post_id, dispatch]);
 
 	return (
 		<div className="container">
-			<div className="bg-white py-5 px-0 w-75 mx-auto">
+			<div className="post-wrapper bg-white py-5 px-3 w-75 mx-auto">
 				<div className="row justify-content-center">
 					<div className="col-lg-10">
 						<h1 className="text-capitalize display-4 mb-4">{title}</h1>

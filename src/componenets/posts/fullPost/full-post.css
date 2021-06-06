@@ -1,0 +1,9 @@
+@media only screen and (max-width: 600px) {
+	.img-wrapper img {
+		max-height: 300px !important;
+	}
+
+	.post-wrapper {
+		width: 90% !important;
+	}
+}
