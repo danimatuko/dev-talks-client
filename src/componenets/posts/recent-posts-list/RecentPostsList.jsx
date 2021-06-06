@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import RecentPosts from "../recent-post/RecentPost";
+import RecentPost from "../recent-post/RecentPost";
 import axios from "axios";
 import checkEnvironment from "../../../helpers/checkEnvironment";
 
 const domain = checkEnvironment();
+console.log(domain);
 const RecentPostsList = () => {
 	const [posts, setPosts] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
@@ -35,11 +36,11 @@ const RecentPostsList = () => {
 		</div>
 	) : (
 		<div className="row row-cols-lg-3 row-cols-md-2 align-items-end">
-			{posts != null &&
+			{posts &&
 				posts.map((post) => {
 					return (
-						<div className="col-12">
-							<RecentPosts key={post.post_id} post={post} />
+						<div className="col-12" key={post.post_id}>
+							<RecentPost post={post} />
 						</div>
 					);
 				})}
