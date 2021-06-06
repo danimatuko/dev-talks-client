@@ -7,7 +7,9 @@ const NavBar = () => {
 	const { isAuth, isLoading } = useSelector((state) => state.auth);
 
 	return (
-		<nav className="navbar navbar-expand-lg mb-5 sticky-top" style={{ backgroundColor: "#eee" }}>
+		<nav
+			className="navbar navbar-expand-lg mb-5 sticky-top navbar-light"
+			style={{ backgroundColor: "#eee" }}>
 			<div className="container">
 				<Link className="navbar-brand text-light bg-dark px-3 " to="/">
 					<div className="d-inline">DEV</div>
@@ -15,6 +17,7 @@ const NavBar = () => {
 						Talks
 					</small>
 				</Link>
+
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -37,27 +40,27 @@ const NavBar = () => {
 								About
 							</Link>
 						</li>
-						{!isLoading && isAuth ? (
-							<ProfileMenu />
-						) : (
-							<>
-								<li className="nav-item  ">
-									<Link
-										className="nav-link text-dark border border-dark rounded-3 mx-1"
-										to="/register">
-										Sign-up
-									</Link>
-								</li>
-								<li className="nav-item">
-									<Link
-										className="nav-link text-dark border border-dark rounded-3 mx-1"
-										to="/login">
-										Login
-									</Link>
-								</li>
-							</>
-						)}
 					</ul>
+					{!isLoading && isAuth ? (
+						<ProfileMenu />
+					) : (
+						<>
+							<li className="nav-item  ">
+								<Link
+									className="nav-link text-dark border border-dark rounded-3 mx-1"
+									to="/register">
+									Sign-up
+								</Link>
+							</li>
+							<li className="nav-item">
+								<Link
+									className="nav-link text-dark border border-dark rounded-3 mx-1"
+									to="/login">
+									Login
+								</Link>
+							</li>
+						</>
+					)}
 				</div>
 			</div>
 		</nav>
