@@ -59,7 +59,7 @@ const CreatePostForm = ({ history }) => {
 
 		// reset after form submit
 		e.target.reset();
-		history.push(`${domain}/profile/dashboard`);
+		history.push(`/profile/dashboard`);
 	};
 
 	return (
