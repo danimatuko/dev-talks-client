@@ -7,6 +7,9 @@ import { addPost, editPost } from "../../../redux/post/postActions";
 import { useParams } from "react-router";
 import axios from "axios";
 import { showNotify } from "../../../redux/toast/toastActions";
+import checkEnvironment from "../../../helpers/checkEnvironment";
+
+const domain = checkEnvironment();
 
 const CreatePostForm = ({ history }) => {
 	// Redux hooks
@@ -31,10 +34,10 @@ const CreatePostForm = ({ history }) => {
 
 	const getPostById = async (post_id) => {
 		try {
-			const res = await axios.get(`/posts/${post_id}`);
+			const res = await axios.get(`${domain}/posts/${post_id}`);
 			populateFormData(res.data);
 		} catch (error) {
-			console.log(error.message);
+			console.log(error);
 		}
 	};
 	const populateFormData = (data) => {
@@ -56,7 +59,7 @@ const CreatePostForm = ({ history }) => {
 
 		// reset after form submit
 		e.target.reset();
-		history.push("/profile/dashboard");
+		history.push(`${domain}/profile/dashboard`);
 	};
 
 	return (
